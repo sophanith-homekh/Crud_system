@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Coffee Shop Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>☕ Coffee Admin</h2>
+        <button onclick="showSection('dashboard')">Dashboard</button>
+        <button onclick="showSection('products')">Products</button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- DASHBOARD -->
+        <section id="dashboard">
+            <h1>Dashboard</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Products</h3>
+                    <p id="totalProducts">0</p>
+                </div>
+
+                <div class="card">
+                    <h3>Total Value</h3>
+                    <p>$<span id="totalValue">0</span></p>
+                </div>
+            </div>
+
+            <h2>All Products</h2>
+            <div class="product-grid" id="dashboardProducts"></div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products" style="display:none;">
+            <h1>Product Management</h1>
+
+            <div class="form-box">
+                <input type="text" id="name" placeholder="Product Name">
+                <input type="number" id="price" placeholder="Price">
+                <input type="number" id="stock" placeholder="Stock">
+                <button onclick="saveProduct()">Save Product</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="productTable"></tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
